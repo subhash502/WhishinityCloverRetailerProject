@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="wishinityPersistence" transaction-type="JTA">
+        <jta-data-source>java:jboss/datasource/wishinity</jta-data-source>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <!-- Please keep these in alphabetical order, for ease of maintaining the list -->
+
+        <class>com.koinplus.common.entity.ConfigurationEntity</class>
+
+        <class>com.trendbrew.entity.BrandEntity</class>
+        <class>com.trendbrew.entity.ItemBuyingOptionsEntity</class>
+        <class>com.trendbrew.entity.ItemCodeEntity</class>
+        <class>com.trendbrew.entity.ItemEntity</class>
+        <class>com.trendbrew.entity.RetailerEntity</class>
+        <class>com.trendbrew.entity.RetailerProfileEntity</class>
+        <class>com.trendbrew.entity.RetailerUserEntity</class>
+
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            <property name="hibernate.jdbc.batch_size " value="100" />
+            <property name="hibernate.order_inserts" value="true" />
+            <property name="hibernate.order_updates" value="true" />
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
